@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Cabeçalho */
+
+header {
+    background: linear-gradient(135deg, #6c5ce7, #4834d4);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 19px;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Introdução */
+
+.intro {
+    background: white;
+    margin-top: 40px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.intro h2 {
+    color: #4834d4;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    margin-bottom: 20px;
+}
+
+/* Botões */
+
+button {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #4834d4;
+    transform: scale(1.03);
+}
+
+/* Projeto oculto */
+
+.oculto {
+    display: none;
+}
+
+#projeto {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f0edff;
+    border-radius: 10px;
+}
+
+#projeto h3 {
+    color: #4834d4;
+    margin-bottom: 10px;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #4834d4;
+    margin-bottom: 12px;
+}
+
+.icone {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Conclusão */
+
+.conclusao {
+    background: #1e1e2f;
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.conclusao h2 {
+    margin-bottom: 20px;
+}
+
+.conclusao p {
+    max-width: 800px;
+    margin: 0 auto 25px;
+}
+
+#mensagem {
+    color: #55efc4;
+    font-weight: bold;
+}
+
+/* Rodapé */
+
+footer {
+    background: #11111d;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Responsividade */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .intro,
+    .card,
+    .conclusao {
+        padding: 25px;
+    }
+}
+
+script.js
+// Botão para mostrar o projeto
+
+const botaoProjeto = document.getElementById("mostrarProjeto");
+const projeto = document.getElementById("projeto");
+
+botaoProjeto.addEventListener("click", function () {
+
+    projeto.classList.toggle("oculto");
+
+    if (projeto.classList.contains("oculto")) {
+        botaoProjeto.textContent = "Conheça o projeto";
+    } else {
+        botaoProjeto.textContent = "Ocultar projeto";
+    }
+
+});
+
+
+// Botão de conclusão
+
+const botaoConclusao = document.getElementById("concluir");
+const mensagem = document.getElementById("mensagem");
+
+botaoConclusao.addEventListener("click", function () {
+
+    mensagem.textContent =
+        "🎉 Análise concluída! A tecnologia pode ser uma grande parceira da criatividade.";
+
+    botaoConclusao.textContent = "Análise concluída ✓";
+});
